@@ -8,11 +8,7 @@ const {
     addSavedPosts,
     deleteSavedPosts,
 } = require("../../controllers/userControllers/userEditControllers");
-const verifyJWT = require("../../middleware/verifyJWT");
-
 const router = express.Router();
-
-router.use(verifyJWT);
 
 router.route("/bio").patch(editBio);
 
