@@ -7,6 +7,10 @@ const postSchema = mongoose.Schema(
             ref: "User",
         },
         media_file: [String],
+        post_content: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Comment",
+        },
         num_likes: { type: Number, default: 0 },
         num_comments: { type: Number, default: 0 },
     },
