@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema(
             default:
                 "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
         },
-        bio: { type: String, required: true },
+        bio: { type: String },
         followers: [
             {
                 type: mongoose.Schema.Types.ObjectId,
@@ -25,12 +25,13 @@ const userSchema = mongoose.Schema(
                 ref: "User",
             },
         ],
-        saved_posts: [
+        savedPosts: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Post",
             },
         ],
+        refreshToken: { type: String },
     },
     { timestamps: true }
 );
