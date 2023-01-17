@@ -15,6 +15,7 @@ const commentSchema = mongoose.Schema(
             ref: "User",
         },
         comment: { type: String, required: true, trim: true },
+        isOriginal: { type: Boolean, default: false },
     },
     { timestamps: true }
 );
